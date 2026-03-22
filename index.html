@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رادار الكوموندو - بث حي</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: #050505; 
+            color: #39ff14; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+        header {
+            padding: 20px;
+            border-bottom: 2px solid #39ff14;
+            background: rgba(0, 0, 0, 0.9);
+            position: sticky; top: 0; z-index: 100;
+        }
+        .status-bar { font-size: 12px; color: #888; margin-top: 5px; }
+        .live-dot {
+            height: 10px; width: 10px; background-color: red;
+            border-radius: 50%; display: inline-block;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+        
+        main { padding: 15px; }
+        .radar-frame {
+            width: 100%; height: 500px;
+            border: 1px solid #333; border-radius: 10px;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
+        }
+        footer { padding: 20px; font-size: 14px; color: #666; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🛰️ رادار الكوموندو</h1>
+    <div class="status-bar">
+        <span class="live-dot"></span> اتصال القمر الصناعي: نشط | مدار 35,000 كم
+    </div>
+</header>
+
+<main>
+    <p style="margin-bottom: 15px; color: #fff;">مراقبة السحب والظواهر الجوية في الوقت الحقيقي عبر NASA Worldview:</p>
+    <iframe class="radar-frame" 
+            src="https://worldview.earthdata.nasa.gov/?v=-24.44498522363191,24.49887190035031,23.336159872193282,47.85043439055848&l=Reference_Labels_15m(hidden),Reference_Features_15m(hidden),Coastlines_15m,VIIRS_SNPP_CorrectedReflectance_TrueColor,MODIS_Aqua_CorrectedReflectance_TrueColor(hidden),MODIS_Terra_CorrectedReflectance_TrueColor(hidden)&lg=true&t=2026-03-22-T00%3A00%3A00Z" 
+            allowfullscreen></iframe>
+</main>
+
+<footer>
+    تم التطوير بواسطة كابتن كوموندو © 2026 | مستضاف على Netlify
+</footer>
+
+</body>
+</html>
